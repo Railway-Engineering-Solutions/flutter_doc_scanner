@@ -1,0 +1,27 @@
+name: flutter_doc_scanner
+description: Override package for flutter_doc_scanner with web plugin disabled for WASM compatibility
+version: 0.0.16
+homepage: https://github.com/Railway-Engineering-Solutions/trax
+
+environment:
+  sdk: ">=3.4.0 <4.0.0"
+  flutter: ">=2.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  plugin_platform_interface: ^2.1.8
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  plugin:
+    platforms:
+      android:
+        package: com.shirsh.flutter_doc_scanner
+        pluginClass: FlutterDocScannerPlugin
+      ios:
+        pluginClass: FlutterDocScannerPlugin
+      # Explicitly exclude web platform to prevent WASM issues
