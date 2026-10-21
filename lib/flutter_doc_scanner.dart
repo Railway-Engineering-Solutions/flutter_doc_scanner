@@ -60,17 +60,19 @@ class FlutterDocScanner {
     return ImageScanResult.fromPlatformData(data);
   }
 
-  /// Scans documents and returns a PDF file path.
+  /// Scans documents and returns the native PDF result unchanged.
+  ///
+  /// Preserves the legacy String, Map, or List response shape, including
+  /// metadata and file URIs. Callers are responsible for interpreting it.
   ///
   /// [page] is the maximum number of pages to scan (must be >= 1, defaults to 4).
   /// Returns `null` if the user cancelled the scan.
   /// Throws [DocScanException] on failure.
-  Future<String?> getScannedDocumentAsPdf({int page = 4}) async {
+  Future<dynamic> getScannedDocumentAsPdf({int page = 4}) async {
     _validatePage(page);
     final data =
         await FlutterDocScannerPlatform.instance.getScannedDocumentAsPdf(page);
-    if (data == null) return null;
-    return PdfScanResult.fromPlatformData(data).pdfUri;
+    return data;
   }
 
   /// Scans documents and returns URIs. **Android only.**
