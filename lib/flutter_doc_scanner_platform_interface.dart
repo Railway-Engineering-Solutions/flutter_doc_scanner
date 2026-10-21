@@ -24,22 +24,47 @@ abstract class FlutterDocScannerPlatform extends PlatformInterface {
   }
 
   Future<String?> getPlatformVersion() {
-    throw UnimplementedError('platformVersion() has not been implemented.');
+    throw UnimplementedError('getPlatformVersion() has not been implemented.');
   }
 
-  Future<dynamic> getScanDocuments([int page = 4]) {
-    throw UnimplementedError('ScanDocuments() has not been implemented.');
+  /// Scans documents and returns raw platform data.
+  ///
+  /// Returns `null` if the user cancelled. The raw data shape varies by
+  /// platform and is normalized by [FlutterDocScanner].
+  Future<dynamic> getScanDocuments(int page) {
+    throw UnimplementedError('getScanDocuments() has not been implemented.');
   }
 
-  Future<dynamic> getScannedDocumentAsImages([int page = 4]) {
-    throw UnimplementedError('ScanDocuments() has not been implemented.');
+  /// Scans documents and returns raw image data from the platform.
+  ///
+  /// [imageFormat] controls the output format on iOS (Android always returns JPEG).
+  /// If [useAutomaticSinglePictureProcessing] is true, native code uses
+  /// a fast single-picture flow and ignores [page].
+  /// Returns `null` if the user cancelled.
+  Future<dynamic> getScannedDocumentAsImages({
+    required int page,
+    required String imageFormat,
+    required double quality,
+    bool useAutomaticSinglePictureProcessing = false,
+  }) {
+    throw UnimplementedError(
+      'getScannedDocumentAsImages() has not been implemented.',
+    );
   }
 
-  Future<dynamic> getScannedDocumentAsPdf([int page = 4]) {
-    throw UnimplementedError('ScanDocuments() has not been implemented.');
+  /// Scans documents and returns raw PDF data from the platform.
+  ///
+  /// Returns `null` if the user cancelled.
+  Future<dynamic> getScannedDocumentAsPdf(int page) {
+    throw UnimplementedError(
+      'getScannedDocumentAsPdf() has not been implemented.',
+    );
   }
 
-  Future<dynamic> getScanDocumentsUri([int page = 4]) {
-    throw UnimplementedError('ScanDocuments() has not been implemented.');
+  /// Scans documents and returns URIs (Android only).
+  ///
+  /// Returns `null` if the user cancelled.
+  Future<dynamic> getScanDocumentsUri(int page) {
+    throw UnimplementedError('getScanDocumentsUri() has not been implemented.');
   }
 }

@@ -1,6 +1,6 @@
 name: flutter_doc_scanner
 description: Override package for flutter_doc_scanner with web plugin disabled for WASM compatibility
-version: 0.0.16
+version: 0.0.21
 homepage: https://github.com/Railway-Engineering-Solutions/trax
 
 environment:
@@ -23,5 +23,5 @@ flutter:
         package: com.shirsh.flutter_doc_scanner
         pluginClass: FlutterDocScannerPlugin
       ios:
-        pluginClass: FlutterDocScannerPlugin
+        pluginClass: SwiftFlutterDocScannerPlugin
       # Explicitly exclude web platform to prevent WASM issues
