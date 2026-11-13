@@ -1,3 +1,9 @@
+## RES Flutter 3.50 refresh - 2026-11-13
+
+* Merge upstream flutter_doc_scanner_web main (0.1.0, package:web/WASM port) for history only; web plugin sources stay removed.
+* Mobile upstream shirsh94/flutter_doc_scanner has no commits after b6b22fe (0.0.21).
+* Add flutter_lints ^6.0.0 dev dependency so the bundled analysis_options include resolves; verified on Flutter 3.50.0 / Dart 3.14.0.
+
 ## RES mobile-only integration - 2026-10-21
 
 * Import mobile upstream b6b22fe2e4d861c0df2ab182b417cccbe6ff7600 (0.0.21), retaining web and desktop plugin exclusions for Trax WASM builds.
